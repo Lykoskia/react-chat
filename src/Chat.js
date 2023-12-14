@@ -153,7 +153,7 @@ export default function Chat({ username, members, setMembers }) {
     return (
         <section style={styles.chatContainer}>
             <MemberList members={members} username={username} currentUserId={currentUserIdRef} />
-            <MessagesList messages={messages} currentUserId={currentUserIdRef} setRepliedMessage={setRepliedMessage} inputRef={inputRef} />
+            <MessagesList messages={messages} currentUserId={currentUserIdRef.current} setRepliedMessage={setRepliedMessage} inputRef={inputRef} />
             <section style={styles.inputContainerBaseStyle}>
                 {repliedMessage && (
                     <section style={styles.repliedMessageContainer}>
