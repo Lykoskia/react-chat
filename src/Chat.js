@@ -97,6 +97,7 @@ export default function Chat({ username, members, setMembers }) {
         room.on('message', (message) => {
             if (message && message.data && message.member && message.member.clientData) {
                 let newMessage = {
+                    messageId: message.id,
                     username: message.member.clientData.name,
                     text: message.data.text,
                     color: message.member.clientData.color,
