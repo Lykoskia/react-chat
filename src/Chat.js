@@ -100,13 +100,13 @@ export default function Chat({ username, members, setMembers }) {
                     username: message.member.clientData.name,
                     text: message.data.text,
                     color: message.member.clientData.color,
-                    id: message.member.id,
+                    clientId: message.clientId,
                     timestamp: new Date(),
                     quote: message.data.quote
                 };
                 setMessages((prevMessages) => [...prevMessages, newMessage]);
             }
-            if (currentUserIdRef.current !== message.member.id) {
+            if (currentUserIdRef.current !== message.clientId) {
                 setHasNewMessage(true);
             }
         });
