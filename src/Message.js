@@ -4,7 +4,7 @@ import Linkify from 'react-linkify';
 
 export default function Message({ message, currentUserId, setRepliedMessage, inputRef }) {
     const isCurrentUser = message.clientId === currentUserId;
-    const { id, username, text, color } = message;
+    const { messageId, id, username, text, color } = message;
     const textColor = chroma(color).luminance() > 0.5 ? 'black' : 'white';
 
     const userContainerStyles = isCurrentUser ? styles.currentUserContainer : styles.userContainer;
@@ -39,7 +39,7 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
                     <span style={{ float: 'right', fontStyle: 'italic', fontSize: '10px', marginLeft: '10px' }}>{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: 'false' })}</span>
                 </section>
                 <section style={{ fontSize: '0.5rem', fontStyle: 'italic' }}>
-                    (id: {currentUserId})
+                    (id: {message.id})
                 </section>
                 <section>{renderMessageContent(message)}</section>
                 {!isCurrentUser && (
