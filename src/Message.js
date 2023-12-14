@@ -3,7 +3,7 @@ import chroma from 'chroma-js';
 import Linkify from 'react-linkify';
 
 export default function Message({ message, currentUserId, setRepliedMessage, inputRef }) {
-    const isCurrentUser = message.id === currentUserId;
+    const isCurrentUser = message.clientId === currentUserId;
     const { id, username, text, color } = message;
     const textColor = chroma(color).luminance() > 0.5 ? 'black' : 'white';
 
