@@ -10,7 +10,23 @@ export default function Chat({ username, members, setMembers }) {
     const [hasNewMessage, setHasNewMessage] = useState(false);
     const [isWindowFocused, setIsWindowFocused] = useState(true);
 
-    const randomColor = () => '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    const randomColor = () => {
+        const userColors = [
+            '#C41E3A',
+            '#FF7C0A',
+            '#AAD372',
+            '#3FC7EB',
+            '#00FF98',
+            '#F48CBA',
+            '#FFFFFF',
+            '#FFF468',
+            '#0070DD',
+            '#8788EE',
+            '#C69B6D'
+        ];
+
+        return userColors[Math.floor(Math.random() * userColors.length)];
+    };
 
     const userColor = useMemo(() => randomColor(), []);
 
@@ -209,14 +225,10 @@ const styles = {
         border: '2px solid black',
         boxShadow: '0px 0px 10px 0px rgba(0,0,0,1)'
     },
-    messageContainer: {
-        flex: 1,
-        overflowY: 'auto',
-        padding: '20px'
-    },
     inputContainer: {
         display: 'flex',
-        padding: '10px'
+        padding: '10px',
+        boxShadow: '0px 0px 10px 0px rgba(0,0,0,1)'
     },
     input: {
         flex: 1,
@@ -256,6 +268,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         padding: '10px',
-        borderTop: '1px solid #eaeaea'
+        borderTop: '1px solid #eaeaea',
+        boxShadow: '0px 0px 10px 0px rgba(0,0,0,1)'
     }
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Chat from './Chat';
+import './Chat.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {

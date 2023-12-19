@@ -17,23 +17,23 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
 
     const renderMessageContent = (message) => {
         return (
-                <React.Fragment>
-                    {message.quote && (
-                        <section style={styles.repliedMessageContent}>
-                            <blockquote style={styles.blockquote}>
-                                <header style={styles.replyHeader}>{message.quote.username}:</header>
-                                <Linkify>{message.quote.text}</Linkify>
-                            </blockquote>
-                        </section>
-                    )}
-                    <Linkify><section>{text}</section></Linkify>
-                </React.Fragment>
-            );
+            <React.Fragment>
+                {message.quote && (
+                    <section style={styles.repliedMessageContent}>
+                        <blockquote style={styles.blockquote}>
+                            <header style={styles.replyHeader}>{message.quote.username}:</header>
+                            <Linkify>{message.quote.text}</Linkify>
+                        </blockquote>
+                    </section>
+                )}
+                <Linkify><section>{text}</section></Linkify>
+            </React.Fragment>
+        );
     }
 
     return (
         <section style={userContainerStyles}>
-            <section style={{...userMessageStyles, backgroundColor: color, color: textColor}}>
+            <section style={{ ...userMessageStyles, backgroundColor: color, color: textColor }}>
                 <section>
                     <span style={{ fontWeight: 'bold' }}>{username}</span>:
                     <span style={{ float: 'right', fontStyle: 'italic', fontSize: '10px', marginLeft: '10px' }}>{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: 'false' })}</span>
@@ -69,7 +69,9 @@ const styles = {
         padding: '10px',
         boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.1)',
         overflowWrap: 'break-word',
-        maxWidth: '95%'
+        maxWidth: '95%',
+        border: '2px solid black',
+        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)'
     },
     message: {
         borderRadius: '5px',
@@ -77,7 +79,9 @@ const styles = {
         padding: '10px',
         boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.1)',
         overflowWrap: 'break-word',
-        maxWidth: '95%'
+        maxWidth: '95%',
+        border: '2px solid black',
+        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)'
     },
     replyButton: {
         background: 'black',
@@ -89,25 +93,25 @@ const styles = {
         cursor: 'pointer',
         fontWeight: 'bold'
     },
-     repliedMessageContainer: {
+    repliedMessageContainer: {
         backgroundColor: '#000000',
         color: '#ffffff',
         borderRadius: '5px',
         padding: '5px',
-        margin: '5px 0',
-        borderLeft: '5px solid #ccc'
+        margin: '5px 0'
     },
     repliedMessageContent: {
         backgroundColor: 'black',
         color: 'white',
         fontStyle: 'italic',
         padding: '5px',
-        borderRadius: '5px',
+        borderRadius: '10px',
+        border: '2px solid orange',
         margin: '5px 0'
     },
     blockquote: {
         margin: '0 0 0 5px',
-        padding: '0 0 0 5px'
+        padding: '0 0 0 5px',
     },
     replyHeader: {
         fontWeight: 'bold',

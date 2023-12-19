@@ -1,11 +1,3 @@
-.message-right {
-  text-align: right;
-}
-
-.message-left {
-  text-align: left;
-}
-
-.disabled {
-    opacity: 0.1;
+button:hover {
+  background-color: #0070DD !important;
 }
