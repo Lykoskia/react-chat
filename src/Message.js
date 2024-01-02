@@ -35,7 +35,7 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
         <section style={userContainerStyles}>
             <section style={{ ...userMessageStyles, backgroundColor: color, color: textColor }}>
                 <section>
-                    <span style={{ fontWeight: 'bold', opacity: 0.5 }}>{username}</span>:
+                    <span style={{ styles.username }}>{username}</span>:
                     <span style={{ float: 'right', fontStyle: 'italic', fontSize: '10px', marginLeft: '10px' }}>{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: 'false' })}</span>
                 </section>
                 <section style={{ fontSize: '0.5rem', fontStyle: 'italic' }}>
@@ -117,5 +117,12 @@ const styles = {
         fontWeight: 'bold',
         fontSize: '0.75rem',
         marginBottom: '4px'
-    }
+    },
+    username = {
+        fontWeight: 'bold',
+        backgroundColor: chroma(color).alpha(0.5).css(),
+        color: textColor,
+        padding: '2px 4px',
+        borderRadius: '4px'
+    };
 };
