@@ -71,8 +71,7 @@ const styles = {
         overflowWrap: 'break-word',
         maxWidth: '95%',
         border: '2px solid black',
-        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)',
-        backgroundColor: chroma(color).alpha(0.5).css()
+        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)'
     },
     message: {
         borderRadius: '5px',
@@ -82,8 +81,7 @@ const styles = {
         overflowWrap: 'break-word',
         maxWidth: '95%',
         border: '2px solid black',
-        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)',
-        backgroundColor: chroma(color).alpha(0.5).css()
+        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)'
     },
     replyButton: {
         background: 'black',
@@ -123,6 +121,8 @@ const styles = {
     username = {
         fontWeight: 'bold',
         padding: '2px 4px',
-        borderRadius: '4px'
+        borderRadius: '4px',
+        opacity: 1,
+        backgroundColor: chroma(color).alpha(0.5).css()
     };
 };
