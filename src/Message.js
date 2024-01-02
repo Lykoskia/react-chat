@@ -10,6 +10,11 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
     const userContainerStyles = isCurrentUser ? styles.currentUserContainer : styles.userContainer;
     const userMessageStyles = isCurrentUser ? styles.currentUserMessage : styles.message;
 
+    const usernameStyle = {
+        ...styles.username,
+        backgroundColor: chroma(color).alpha(0.5).css()
+    };
+
     const handleReplyClick = useCallback(() => {
         setRepliedMessage(message);
         inputRef.current.focus();
@@ -35,7 +40,7 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
         <section style={userContainerStyles}>
             <section style={{ ...userMessageStyles, backgroundColor: color, color: textColor }}>
                 <section>
-                    <span style={styles.username}>{username}</span>:
+                    <span style={usernameStyle}>{username}</span>:
                     <span style={{ float: 'right', fontStyle: 'italic', fontSize: '10px', marginLeft: '10px' }}>{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: 'false' })}</span>
                 </section>
                 <section style={{ fontSize: '0.5rem', fontStyle: 'italic' }}>
@@ -119,7 +124,6 @@ const styles = {
     username: {
         fontWeight: 'bold',
         padding: '2px 4px',
-        borderRadius: '4px',
-        backgroundColor: chroma(color).alpha(0.5).css()
+        borderRadius: '4px'
     }
 };
