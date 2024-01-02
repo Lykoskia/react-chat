@@ -6,14 +6,14 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
     const isCurrentUser = message.clientId === currentUserId;
     const { clientId, username, text, color } = message;
     const textColor = chroma(color).luminance() > 0.5 ? 'black' : 'white';
+    const usernameBackgroundColor = chroma(textColor).luminance() > 0.5 ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)';
 
     const userContainerStyles = isCurrentUser ? styles.currentUserContainer : styles.userContainer;
     const userMessageStyles = isCurrentUser ? styles.currentUserMessage : styles.message;
 
     const usernameStyle = {
         ...styles.username,
-        backgroundColor: chroma(color).alpha(0.2).css(),
-        color: textColor
+        backgroundColor: usernameBackgroundColor
     };
 
     const handleReplyClick = useCallback(() => {
