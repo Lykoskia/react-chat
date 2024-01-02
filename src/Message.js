@@ -67,21 +67,19 @@ const styles = {
         borderRadius: '5px',
         margin: '5px',
         padding: '10px',
-        boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.1)',
         overflowWrap: 'break-word',
         maxWidth: '95%',
         border: '2px solid black',
-        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)'
+        boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.1), 2px 4px 10px 0px rgba(0,0,0,1)'
     },
     message: {
         borderRadius: '5px',
         margin: '5px',
         padding: '10px',
-        boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.1)',
         overflowWrap: 'break-word',
         maxWidth: '95%',
         border: '2px solid black',
-        boxShadow: '2px 4px 10px 0px rgba(0,0,0,1)'
+        boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.1), 2px 4px 10px 0px rgba(0,0,0,1)'
     },
     replyButton: {
         background: 'black',
@@ -118,11 +116,10 @@ const styles = {
         fontSize: '0.75rem',
         marginBottom: '4px'
     },
-    username = {
+    username: {
         fontWeight: 'bold',
         padding: '2px 4px',
         borderRadius: '4px',
-        opacity: 1,
         backgroundColor: chroma(color).alpha(0.5).css()
     };
 };
