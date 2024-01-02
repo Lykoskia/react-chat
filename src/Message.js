@@ -35,7 +35,7 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
         <section style={userContainerStyles}>
             <section style={{ ...userMessageStyles, backgroundColor: color, color: textColor }}>
                 <section>
-                    <span style={{ styles.username }}>{username}</span>:
+                    <span style={styles.username}>{username}</span>:
                     <span style={{ float: 'right', fontStyle: 'italic', fontSize: '10px', marginLeft: '10px' }}>{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: 'false' })}</span>
                 </section>
                 <section style={{ fontSize: '0.5rem', fontStyle: 'italic' }}>
