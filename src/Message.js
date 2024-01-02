@@ -121,5 +121,5 @@ const styles = {
         padding: '2px 4px',
         borderRadius: '4px',
         backgroundColor: chroma(color).alpha(0.5).css()
-    };
+    }
 };
