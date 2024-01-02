@@ -12,7 +12,8 @@ export default function Message({ message, currentUserId, setRepliedMessage, inp
 
     const usernameStyle = {
         ...styles.username,
-        backgroundColor: chroma(color).alpha(0.5).css()
+        backgroundColor: chroma(color).alpha(0.2).css(),
+        color: textColor
     };
 
     const handleReplyClick = useCallback(() => {
